@@ -71,8 +71,29 @@ const Index = () => {
         <div className="mt-20 text-center space-y-8">
           <h2 className="text-3xl md:text-4xl font-bold">See It In Action</h2>
           <p className="text-lg text-muted-foreground">
-            Click the chat bubble in the bottom-right corner to try our chatbot demo
+            Click the chat bubble in the bottom-right corner to try our AI-powered website chatbot
           </p>
+          <div className="bg-gradient-to-r from-primary/10 to-primary-glow/10 p-6 rounded-2xl border max-w-2xl mx-auto">
+            <h3 className="text-xl font-semibold mb-3">Try These Demo Commands:</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+              <div className="bg-background/50 p-3 rounded-lg">
+                <strong>Crawl a website:</strong><br />
+                "Crawl https://example.com"
+              </div>
+              <div className="bg-background/50 p-3 rounded-lg">
+                <strong>Ask about services:</strong><br />
+                "What services do you offer?"
+              </div>
+              <div className="bg-background/50 p-3 rounded-lg">
+                <strong>Get contact info:</strong><br />
+                "How can I contact you?"
+              </div>
+              <div className="bg-background/50 p-3 rounded-lg">
+                <strong>Learn more:</strong><br />
+                "Tell me about your company"
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Embed Code Section */}
