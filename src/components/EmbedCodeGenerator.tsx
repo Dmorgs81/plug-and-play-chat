@@ -8,20 +8,12 @@ const EmbedCodeGenerator = () => {
   const [copied, setCopied] = useState(false);
   const { toast } = useToast();
 
-  const embedCode = `<!-- Chatbot Widget -->
-<div id="chatbot-widget"></div>
+  const embedCode = `<!-- Dmorgs Industries Chatbot Widget -->
 <script>
   (function() {
     var script = document.createElement('script');
-    script.src = 'https://your-domain.com/chatbot.js';
+    script.src = 'https://cuxjptrdoodnvykuovmm.supabase.co/functions/v1/chatbot-widget/widget.js';
     script.async = true;
-    script.onload = function() {
-      ChatbotWidget.init({
-        containerId: 'chatbot-widget',
-        theme: 'blue',
-        position: 'bottom-right'
-      });
-    };
     document.head.appendChild(script);
   })();
 </script>`;
@@ -67,23 +59,26 @@ const EmbedCodeGenerator = () => {
       <CardContent>
         <div className="space-y-4">
           <p className="text-muted-foreground text-sm">
-            Simply copy and paste this code into any website to add the chatbot widget:
+            Simply copy and paste this code into any website to add the chatbot widget. It works on any HTML page!
           </p>
+          <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 text-sm text-amber-800">
+            <strong>🚀 Live & Ready!</strong> This embed code points to your deployed Supabase function and will work on any website immediately.
+          </div>
           <pre className="bg-muted p-4 rounded-lg text-sm overflow-x-auto">
             <code>{embedCode}</code>
           </pre>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
             <div className="flex items-center space-x-2">
               <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-              <span>Works on any website</span>
+              <span>Works on any website instantly</span>
             </div>
             <div className="flex items-center space-x-2">
               <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-              <span>No technical knowledge required</span>
+              <span>No API keys or setup required</span>
             </div>
             <div className="flex items-center space-x-2">
               <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-              <span>Fully customizable</span>
+              <span>Auto-crawls website content</span>
             </div>
           </div>
         </div>
