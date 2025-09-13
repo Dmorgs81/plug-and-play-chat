@@ -40,6 +40,7 @@ const ChatWidget = () => {
 
   const handleSendMessage = async () => {
     if (!inputValue.trim()) return;
+    console.log('[ChatWidget] handleSendMessage', { inputValue });
 
     const userMessage: Message = {
       id: Date.now().toString(),
@@ -105,7 +106,7 @@ const ChatWidget = () => {
     }
   };
 
-  const handleKeyPress = (e: React.KeyboardEvent) => {
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
       handleSendMessage();
@@ -113,7 +114,7 @@ const ChatWidget = () => {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className="fixed bottom-6 right-6 z-[9999]">
       {/* Chat Bubble */}
       {!isOpen && (
         <Button
@@ -206,7 +207,7 @@ const ChatWidget = () => {
                   placeholder={crawledData.length > 0 ? "Ask me about the website..." : "Enter a website URL to crawl or ask a question..."}
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
-                  onKeyPress={handleKeyPress}
+                  onKeyDown={handleKeyDown}
                   className="flex-1"
                   disabled={isCrawling}
                 />
